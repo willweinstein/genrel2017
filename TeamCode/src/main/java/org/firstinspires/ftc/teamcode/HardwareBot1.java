@@ -111,7 +111,7 @@ public class HardwareBot1
 
     public void moveForward(double power, float comp) {
         double[] setPowers = {power, power, power, power};
-        double[] turnPowers = multArray(getTurnPowers(comp), 0.4 * power);
+        double[] turnPowers = multArray(getTurnPowers(comp), -0.4 * power);
         powers(avgArrays(turnPowers, setPowers));
     }
 
@@ -119,10 +119,10 @@ public class HardwareBot1
         double[] setPowers = new double[4];
         switch (dir) {
             case LEFT:
-                setPowers = new double[] {power, -power, -power, power};
+                setPowers = new double[] {1.4 * power, -power, -power, 1.4 * power};
                 break;
             case RIGHT:
-                setPowers = new double[] {-power, power, power, -power};
+                setPowers = new double[] {-1.4 * power, power, power, -1.4 *  power};
                 break;
             default:
                 setPowers = new double[] {0, 0, 0, 0};
@@ -154,16 +154,16 @@ public class HardwareBot1
         double[] setPowers = new double[4];
         switch (dir) {
             case LEFT:
-                setPowers = new double[] {power, -power, -power, power};
+                setPowers = new double[] {1.4 * power, -power, -power, 1.4 * power};
                 break;
             case RIGHT:
-                setPowers = new double[] {-power, power, power, -power};
+                setPowers = new double[] {-1.4 * power, power, power, -1.4 * power};
                 break;
             default:
                 setPowers = new double[] {0, 0, 0, 0};
         }
 
-        double[] turnPowers = multArray(getTurnPowers(comp), 0.2 * power);
+        double[] turnPowers = multArray(getTurnPowers(comp), -0.2 * power);
         powers(avgArrays(turnPowers, setPowers));
     }
 

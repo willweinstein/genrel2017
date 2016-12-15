@@ -1,2 +1,0 @@
-CHANGED,/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/org/firstinspires/ftc/teamcode/MecTeleRunning$override.class
-CHANGED,/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class
