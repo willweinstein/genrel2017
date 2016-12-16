@@ -29,10 +29,10 @@ import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackables;
 /**
  * Created by student on 9/22/16.
  */
-@Autonomous(name = "BotAuto3", group="Vuforia")
+@Autonomous(name = "BotAuto5", group="Vuforia")
 public class AutoWithBot extends LinearOpMode {
     enum phase {
-        DRIVING, TURNING, ALIGNING, PUSHING1, PUSHING2, PUSHING3, REALIGNING, END
+        DRIVING, TURNING, ALIGNING, FIXALIGN, PUSHING1, PUSHING2, PUSHING3, REALIGNING, END
     }
     HardwareBot1 bot = new HardwareBot1();
     ColorSensor sensorRGB;
@@ -91,7 +91,7 @@ public class AutoWithBot extends LinearOpMode {
         while(clock.milliseconds() - starTime < 500) {
             bot.moveForward(power);
         }
-        while(compazReading - 45 < -1) {
+        while(compazReading - 47 < -1) {
             compazReading = bot.getCompass();
             bot.turn(HardwareBot1.direction.LEFT, power/3);
             telemetry.addData("Compass Reading", compazReading);
@@ -99,7 +99,7 @@ public class AutoWithBot extends LinearOpMode {
             idle();
         }
         bot.stop();
-
+        String argh = "";
         while (opModeIsActive())  {
             compazReading = bot.getCompass();
             telemetry.addData("compass", compazReading);
@@ -147,10 +147,10 @@ public class AutoWithBot extends LinearOpMode {
                 case DRIVING:
                     if(!found) {
                         bot.moveForward(power/2);
-                    } else if(Math.abs(deg - compazReading) >= 10 && dist > 20) {
+                    } else if(Math.abs(deg - compazReading) >= 10 && dist > 25) {
                         bot.turnComp(deg, power/3);
                         telemetry.addData("drive", "face");
-                    } else if(dist > 20) {
+                    } else if(dist > 25) {
                         bot.moveForward(power/2);
                         telemetry.addData("drive", "forward");
                     } else {
@@ -167,7 +167,7 @@ public class AutoWithBot extends LinearOpMode {
                     telemetry.addData("start target compass", targ);
                     telemetry.addData("cur compass", compazReading);
                     telemetry.addData("curTarget", alignDeg);
-                    if(compazReading - 90 < -1) {
+                    if(compazReading - 80 < -1) {
                         bot.turn(HardwareBot1.direction.LEFT, power/3);
                     } else {
                         bot.stop();
@@ -181,21 +181,42 @@ public class AutoWithBot extends LinearOpMode {
 
                     break;
                 case ALIGNING:
-                    if(tar.get(0) > 1) {
+                    if(tar.get(0) > 1.5) {
                         telemetry.addData("aligning", "right");
-                        bot.moveSide(HardwareBot1.direction.RIGHT, 3 * power, 90);
-                    } else if(tar.get(0) < -1) {
+                        bot.moveSide(HardwareBot1.direction.RIGHT, power);
+                    } else if(tar.get(0) < -1.5) {
                         telemetry.addData("aligning", "left");
-                        bot.moveSide(HardwareBot1.direction.LEFT, 3 * power, 90);
+                        bot.moveSide(HardwareBot1.direction.LEFT, power);
                     } else {
                         telemetry.addData("aligning", "aligned");
-                        curPhase = phase.PUSHING1;
+                        curPhase = phase.FIXALIGN;
+                        argh += tar.get(0);
                         bot.stop();
                     }
                     break;
+                case FIXALIGN:
+                    telemetry.addData("fixing", "true");
+                    telemetry.addData("start Compass", com);
+                    telemetry.addData("start target compass", targ);
+                    telemetry.addData("cur compass", compazReading);
+                    telemetry.addData("curTarget", alignDeg);
+                    if(compazReading - 80 < -1) {
+                        bot.turn(HardwareBot1.direction.LEFT, power/3);
+                    } else {
+                        bot.stop();
+                        curPhase = phase.PUSHING1;
+
+                    }
+                    /*bot.rightFront.setPower(0);
+                    bot.rightBack.setPower(0);
+                    bot.leftFront.setPower(0);
+                    bot.leftBack.setPower(0);*/
+
+                    break;
                 case PUSHING1:
                     telemetry.addData("phase", "pushing1");
-                    if(found && dist > 7) {
+
+                    if(found && dist > 15) {
                         bot.moveForward(power * 3/4, 90);
                     } else {
                         bot.stop();

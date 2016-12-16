@@ -101,7 +101,7 @@ public class HardwareBot1
 
 
     public void moveForward(double power) {
-        double[] setPowers = {power, power, power, power};
+        double[] setPowers = {1.3 * power, 1.3 * power, power, power};
         powers(setPowers);
     }
     public void moveBackward(double power) {
@@ -119,10 +119,10 @@ public class HardwareBot1
         double[] setPowers = new double[4];
         switch (dir) {
             case LEFT:
-                setPowers = new double[] {1.4 * power, -power, -power, 1.4 * power};
+                setPowers = new double[] {power, -power * 3/4, -power, power * 3/4};
                 break;
             case RIGHT:
-                setPowers = new double[] {-1.4 * power, power, power, -1.4 *  power};
+                setPowers = new double[] {-power, power * 3/4, power, -power * 3/4};
                 break;
             default:
                 setPowers = new double[] {0, 0, 0, 0};
@@ -154,10 +154,10 @@ public class HardwareBot1
         double[] setPowers = new double[4];
         switch (dir) {
             case LEFT:
-                setPowers = new double[] {1.4 * power, -power, -power, 1.4 * power};
+                setPowers = new double[] {power, -power, -power, power};
                 break;
             case RIGHT:
-                setPowers = new double[] {-1.4 * power, power, power, -1.4 * power};
+                setPowers = new double[] {-power, power, power, -power};
                 break;
             default:
                 setPowers = new double[] {0, 0, 0, 0};
