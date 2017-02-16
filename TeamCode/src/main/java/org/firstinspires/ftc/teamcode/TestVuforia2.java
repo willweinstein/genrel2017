@@ -38,6 +38,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.vuforia.Vuforia;
 
 import org.firstinspires.ftc.robotcontroller.internal.FTCVuforia;
@@ -49,7 +50,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackable;
 import java.util.HashMap;
 
 
-@Autonomous(name="vuf", group="Teleops")
+@Autonomous(name="ColorSensorTest", group="Autonomous")
 @Disabled //only uncomment this if you don't want to see the opmode
 public class TestVuforia2 extends LinearOpMode {
 
@@ -58,65 +59,20 @@ public class TestVuforia2 extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException {
-        telemetry.addData("Status", "Hello Driver");    //
-        telemetry.update();
-        vuforia = FtcRobotControllerActivity.getVuforia();
-        vuforia.addTrackables("fieldelements.xml");
-        vuforia.initVuforia();
-
-        //initialize robot with the robot hardware class
-
-
-        // Send telemetry message to signify robot waiting;
-        telemetry.addData("Say", "Hello Driver");    //
-        telemetry.update();
-
+        ColorSensor csensor = hardwareMap.colorSensor.get("mrsensor");
+        csensor.enableLed(true);
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
 
         // run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
-            // Run wheels in tank mode (note: The joystick goes negative when pushed forwards, so negate it)
+           telemetry.addData("red", csensor.red());
+            telemetry.addData("blue", csensor.blue());
+            telemetry.addData("green", csensor.green());
+            telemetry.addData("alpha", csensor.alpha());
 
 
-            HashMap<String, double[]> data = vuforia.getVuforiaData();
-            if(data.containsKey("tools")) {
-                if(data.get("tools") != null) {
-                    if (data.get("tools").length == 7) {
-                        try {
-
-                            telemetry.addData("x", data.get("tools")[3]);
-                            telemetry.addData("y", data.get("tools")[4]);
-                            telemetry.addData("z", data.get("tools")[5]);
-                        } catch (Exception e) {
-                            telemetry.addData("error", e);
-                        }
-                        telemetry.addData("Running", "found");
-                        telemetry.update();
-                    }
-                }
-            } else {
-                telemetry.addData("Running", "not found");
-                telemetry.update();
-            }
-
-            // Use gamepad Y & A raise and lower the arm
-            /*if (gamepad1.a) {
-                telemetry.addData("Controllers", gamepad1.right_stick_x);
-            } else if (gamepad1.y) {
-
-            }
-
-
-            // Use gamepad X & B to open and close the claw
-            if (gamepad1.x) {
-
-            } else if (gamepad1.b) {
-
-            }
-            */
-
-
+                // Run wheels in tank mode (note: The joystick goes negative when pushed forwards, so negate it)
 
             // Send telemetry message to signify robot running;
 

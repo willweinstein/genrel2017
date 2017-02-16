@@ -34,6 +34,7 @@ public class HardwareBot1
     public DcMotor leftFront = null;
     public DcMotor leftBack = null;
     public DcMotor rightFront = null;
+
     public DcMotor rightBack = null;
     public BNO055IMU compass = null;
 
@@ -101,7 +102,7 @@ public class HardwareBot1
 
 
     public void moveForward(double power) {
-        double[] setPowers = {1.3 * power, 1.3 * power, power, power};
+        double[] setPowers = {power, power, power, power};
         powers(setPowers);
     }
     public void moveBackward(double power) {
@@ -111,17 +112,17 @@ public class HardwareBot1
 
     public void moveForward(double power, float comp) {
         double[] setPowers = {power, power, power, power};
-        double[] turnPowers = multArray(getTurnPowers(comp), -0.2 * power);
+        double[] turnPowers = multArray(getTurnPowers(comp), -0.4 * power);
         powers(avgArrays(turnPowers, setPowers));
     }
 
     public void moveSide(HardwareBot1.direction dir, double power) {
         double[] setPowers = new double[4];
         switch (dir) {
-            case LEFT:
+            case RIGHT:
                 setPowers = new double[] {power, -power, -power, power};
                 break;
-            case RIGHT:
+            case LEFT:
                 setPowers = new double[] {-power, power, power, -power};
                 break;
             default:
@@ -133,10 +134,10 @@ public class HardwareBot1
     public void turn(HardwareBot1.direction dir, double power) {
         double[] setPowers = new double[4];
         switch (dir) {
-            case RIGHT:
+            case LEFT:
                 setPowers = new double[] {-power, -power, power, power};
                 break;
-            case LEFT:
+            case RIGHT:
                 setPowers = new double[] {power, power, -power, -power};
                 break;
             default:
@@ -153,17 +154,17 @@ public class HardwareBot1
     public void moveSide(HardwareBot1.direction dir, double power, float comp) {
         double[] setPowers = new double[4];
         switch (dir) {
-            case LEFT:
+            case RIGHT:
                 setPowers = new double[] {power, -power, -power, power};
                 break;
-            case RIGHT:
+            case LEFT:
                 setPowers = new double[] {-power, power, power, -power};
                 break;
             default:
                 setPowers = new double[] {0, 0, 0, 0};
         }
 
-        double[] turnPowers = multArray(getTurnPowers(comp), -0.2 * power);
+        double[] turnPowers = multArray(getTurnPowers(comp), -0.5 * power);
         powers(avgArrays(turnPowers, setPowers));
     }
 
@@ -265,15 +266,15 @@ public class HardwareBot1
 
         // Retrieve and initialize the IMU. We expect the IMU to be attached to an I2C port
         // on a Core Device Interface Module, configured to be a sensor of type "AdaFruit IMU",
-        // and named "imu".
+        // and named "imu"
         compass = hwMap.get(BNO055IMU.class, "imu");
         compass.initialize(parameters);
 
         // Define and Initialize Motors
-        rightFront   = hwMap.dcMotor.get("rightFront");
-        rightBack  = hwMap.dcMotor.get("rightBack");
-        leftFront   = hwMap.dcMotor.get("leftFront");
-        leftBack = hwMap.dcMotor.get("leftBack");
+        rightFront   = hwMap.dcMotor.get("frontRight");
+        rightBack  = hwMap.dcMotor.get("backRight");
+        leftFront   = hwMap.dcMotor.get("frontLeft");
+        leftBack = hwMap.dcMotor.get("backLeft");
         leftBack.setDirection(DcMotor.Direction.REVERSE);
         leftFront.setDirection(DcMotor.Direction.REVERSE);
 
