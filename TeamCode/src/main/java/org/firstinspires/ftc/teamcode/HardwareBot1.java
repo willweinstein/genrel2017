@@ -100,6 +100,21 @@ public class HardwareBot1
         return output;
     }
 
+    public void diagonalForward(direction dir, double power) {
+        double[] setPowers = new double[4];
+        switch (dir) {
+            case RIGHT:
+                setPowers = new double[] {power, 0, 0, power};
+                break;
+            case LEFT:
+                setPowers = new double[] {0, power, power, 0};
+                break;
+            default:
+                setPowers = new double[] {0, 0, 0, 0};
+                break;
+        }
+        powers(setPowers);
+    }
 
     public void moveForward(double power) {
         double[] setPowers = {power, power, power, power};
