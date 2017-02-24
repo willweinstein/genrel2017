@@ -4,230 +4,76 @@
     api-level="23"
     density="xhdpi"
     format="7"
-    timestamp="278943933164690"
+    timestamp="283821237336608"
     token="-1220035480054236607"
     verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="178" />
+        duration="140" />
     <task
         name="instant-run-dex"
-        duration="1030" />
+        duration="1055" />
     <task
         name="instant-run-transform"
-        duration="14" />
+        duration="11" />
     <task
         name="verifier"
-        duration="2" />
+        duration="3" />
 
     <artifact
         location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/reload-dex/debug/classes.dex"
         type="RELOAD_DEX" />
 
-    <build timestamp="275264376810000" >
+    <build timestamp="281547302887773" >
         <artifact
             location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/outputs/apk/TeamCode-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="275330712524015"
+        timestamp="282186099014073"
         verifier="COMPATIBLE" >
         <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/275330712524015/classes.dex"
+            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/282186099014073/classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
-        timestamp="275422665589788"
+        timestamp="282260315479083"
         verifier="COMPATIBLE" >
         <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/275422665589788/classes.dex"
+            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/282260315479083/classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
-        timestamp="275502847051360"
+        timestamp="283421154377730"
         verifier="COMPATIBLE" >
         <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/275502847051360/classes.dex"
+            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/283421154377730/classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
-        timestamp="275594611527335"
+        timestamp="283584362320081"
         verifier="COMPATIBLE" >
         <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/275594611527335/classes.dex"
+            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/283584362320081/classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
-        timestamp="275702370780895"
+        timestamp="283681201305461"
         verifier="COMPATIBLE" >
         <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/275702370780895/classes.dex"
+            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/283681201305461/classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
-        timestamp="275929471907613"
+        timestamp="283688482467387"
         verifier="COMPATIBLE" >
         <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/275929471907613/classes.dex"
+            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/283688482467387/classes.dex"
             type="RELOAD_DEX" />
     </build>
     <build
-        timestamp="276028006522730"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/276028006522730/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="276104055992111"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/276104055992111/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="276213892815197"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/276213892815197/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="276321825545485"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/276321825545485/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="276601487115763"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/276601487115763/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="276942635501923"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/276942635501923/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="277051546486960"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/277051546486960/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="277109422834876"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/277109422834876/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="277231010460885"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/277231010460885/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="277260274648340"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/277260274648340/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="277482208960246"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/277482208960246/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="277534450070540"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/277534450070540/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="277632648571973"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/277632648571973/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="277755881365792"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/277755881365792/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="278043967983392"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/278043967983392/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="278197583834257"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/278197583834257/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="278243964328136"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/278243964328136/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="278425948559635"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/278425948559635/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="278534749920428"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/278534749920428/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="278634943542681"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/278634943542681/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="278774024349237"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/278774024349237/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="278865491850245"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/builds/debug/278865491850245/classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        timestamp="278943933164690"
+        timestamp="283821237336608"
         verifier="COMPATIBLE" >
         <artifact
             location="/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/reload-dex/debug/classes.dex"

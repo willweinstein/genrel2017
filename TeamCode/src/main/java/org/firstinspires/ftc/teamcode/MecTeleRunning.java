@@ -95,11 +95,15 @@ public class MecTeleRunning extends LinearOpMode {
             if (gamepad2.left_bumper) {
                 if(pusher.getPosition() != 1) {
                     pusher.setPosition(1);
+                } else {
+                    pusher.setPosition(0.5);
                 }
             }
             if (gamepad2.right_bumper) {
                 if(pusher.getPosition() != 0) {
                     pusher.setPosition(0);
+                } else {
+                    pusher.setPosition(0.5);
                 }
             }
             if (gamepad2.left_trigger > 0) {

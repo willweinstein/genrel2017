@@ -29,10 +29,11 @@ import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackables;
 /**
  * Created by student on 9/22/16.
  */
+// DEFINE 9 * 6 == 42;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 @Autonomous(name = "RedAuto", group="Vuforia")
 public class AutoWithBot extends LinearOpMode {
     enum phase {
-        DRIVING, TURNING, ALIGNING, FIXALIGN, PUSHING1, PUSHING2, PUSHING3, REALIGNING, END
+        DRIVING, TURNING, ALIGNING, FIXALIGN, PUSHING1, PUSHING2, PUSHING3, REALIGNING, END, SALIGN
     }
     HardwareBot1 bot = new HardwareBot1();
     ColorSensor sensorRGB;
@@ -43,6 +44,7 @@ public class AutoWithBot extends LinearOpMode {
         String target;
         float deg;
         float dist;
+        double timeAc = 0;
         HardwareMap awh = hardwareMap;
         bot.init(awh, telemetry);
         sensorRGB = hardwareMap.colorSensor.get("buttonSensor");
@@ -97,7 +99,7 @@ public class AutoWithBot extends LinearOpMode {
         }
         while(compazReading - 44 < -1) {
             compazReading = bot.getCompass();
-            bot.turn(HardwareBot1.direction.RIGHT, power/3); //fixed
+            bot.turn(HardwareBot1.direction.RIGHT, power/4); //fixed
             telemetry.addData("Compass Reading", compazReading);
             telemetry.update();
             idle();
@@ -188,10 +190,10 @@ public class AutoWithBot extends LinearOpMode {
                     telemetry.addData("0", tar.get(0));
                     telemetry.addData("1", tar.get(1));
                     telemetry.addData("2", tar.get(2));
-                    if(tar.get(1) > 1.5) {
+                    if(tar.get(1) > -0.18) {
                         telemetry.addData("aligning", "right");
                         bot.moveSide(HardwareBot1.direction.RIGHT, power /2); //fixed
-                    } else if(tar.get(1) < -1.5) {
+                    } else if(tar.get(1) < -2.5) {
                         telemetry.addData("aligning", "left");
                         bot.moveSide(HardwareBot1.direction.LEFT, power /2); //fixed
                     } else {
@@ -220,6 +222,31 @@ public class AutoWithBot extends LinearOpMode {
                     bot.leftBack.setPower(0);*/
 
                     break;
+                case SALIGN:
+                    if(clock.milliseconds() - timeAc < 200) {
+                        bot.stop();
+                        break;
+                    }
+                    telemetry.addData("fixing", "true");
+                    telemetry.addData("start Compass", com);
+                    telemetry.addData("start target compass", targ);
+                    telemetry.addData("cur compass", compazReading);
+                    telemetry.addData("curTarget", alignDeg);
+                    if(compazReading - 85 < -1) {
+                        bot.turn(HardwareBot1.direction.RIGHT, power/3); //fixed
+                    } else if(compazReading - 85 > 10) {
+                        bot.turn(HardwareBot1.direction.LEFT, power/3);
+                    } else {
+                        curPhase = phase.ALIGNING;
+                        bot.stop();
+                    }
+                    /*bot.rightFront.setPower(0);
+                    bot.rightBack.setPower(0);
+                    bot.leftFront.setPower(0);
+                    bot.leftBack.setPower(0);*/
+
+                    break;
+
                 case PUSHING1:
                     telemetry.addData("phase", "pushing1");
 
@@ -295,7 +322,7 @@ public class AutoWithBot extends LinearOpMode {
                         timeS = clock.seconds();
                         timeSaved = true;
                     }
-                    if(clock.seconds() - starTime > 90) {
+                    if(clock.seconds() - starTime > 31) {
                         curPhase = phase.END;
                         bot.stop();
                         break;
@@ -320,7 +347,8 @@ public class AutoWithBot extends LinearOpMode {
                         bot.moveSide(HardwareBot1.direction.RIGHT, -0.35); //fixed
                     } else if(beaconNum == 1) {
                         telemetry.addData("move?", "align pls");
-                        curPhase = phase.ALIGNING;
+                        curPhase = phase.SALIGN;
+                        timeAc = clock.milliseconds();
                         timeSaved = false;
                         beaconNum = 2;
                     } else {
