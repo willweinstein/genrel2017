@@ -10,11 +10,76 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c63c9f45-0380-461e-92c7-be82fd79055c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutoWithBlue.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/builds/debug/54297676852087/classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/builds/debug/54313420953884/classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/builds/debug/54568562926265/classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/builds/debug/54721168963570/classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/builds/debug/54772030586320/classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/builds/debug/54847908876246/classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/builds/debug/54951755641610/classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/builds/debug/54999335179316/classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/builds/debug/55034278230167/classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/builds/debug/55109249596096/classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/builds/debug/55165251072246/classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/builds/debug/55174865126575/classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/builds/debug/55236600743475/classes.dex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/org/firstinspires/ftc/teamcode/AutoNew$override.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_TeamCode_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_TeamCode_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_TeamCode_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_TeamCode_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_TeamCode_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_TeamCode_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/AutoWithBot$1.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/AutoWithBot$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/AutoWithBot.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/AutoWithBot.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/HardwareBot1$1.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/HardwareBot1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/HardwareBot1.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/HardwareBot1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/MecTeleRunning.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/MecTeleRunning.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/TestVuforia2.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/classes/debug/org/firstinspires/ftc/teamcode/TestVuforia2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental-verifier/debug/org/firstinspires/ftc/teamcode/AutoWithBot$1.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental-verifier/debug/org/firstinspires/ftc/teamcode/AutoWithBot$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental-verifier/debug/org/firstinspires/ftc/teamcode/AutoWithBot.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental-verifier/debug/org/firstinspires/ftc/teamcode/AutoWithBot.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental-verifier/debug/org/firstinspires/ftc/teamcode/HardwareBot1$1.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental-verifier/debug/org/firstinspires/ftc/teamcode/HardwareBot1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental-verifier/debug/org/firstinspires/ftc/teamcode/HardwareBot1.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental-verifier/debug/org/firstinspires/ftc/teamcode/HardwareBot1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental-verifier/debug/org/firstinspires/ftc/teamcode/MecTeleRunning.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental-verifier/debug/org/firstinspires/ftc/teamcode/MecTeleRunning.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental-verifier/debug/org/firstinspires/ftc/teamcode/TestVuforia2.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/incremental-verifier/debug/org/firstinspires/ftc/teamcode/TestVuforia2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/instant-run-support/debug/classes.zip" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/instant-run-support/debug/classes.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/instant-run-support/debug/resources.zip" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/instant-run-support/debug/resources.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/reload-dex/debug/classes.dex" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/reload-dex/debug/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/reload-dex/debug/classes.jar" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/reload-dex/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/res/resources-debug-androidTest.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/res/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2/classes.dex" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/firstinspires/ftc/teamcode/AutoWithBot$1.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/firstinspires/ftc/teamcode/AutoWithBot$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/firstinspires/ftc/teamcode/AutoWithBot.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/firstinspires/ftc/teamcode/AutoWithBot.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/firstinspires/ftc/teamcode/HardwareBot1$1.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/firstinspires/ftc/teamcode/HardwareBot1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/firstinspires/ftc/teamcode/HardwareBot1.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/firstinspires/ftc/teamcode/HardwareBot1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/firstinspires/ftc/teamcode/MecTeleRunning.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/firstinspires/ftc/teamcode/MecTeleRunning.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/firstinspires/ftc/teamcode/TestVuforia2.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/firstinspires/ftc/teamcode/TestVuforia2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/org/firstinspires/ftc/teamcode/HardwareBot1$override.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/org/firstinspires/ftc/teamcode/HardwareBot1$override.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_2/org/firstinspires/ftc/teamcode/AutoNew.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_2/org/firstinspires/ftc/teamcode/AutoNew.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_2/org/firstinspires/ftc/teamcode/AutoWithBot.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_2/org/firstinspires/ftc/teamcode/AutoWithBot.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_2/org/firstinspires/ftc/teamcode/HardwareBot1$1.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_2/org/firstinspires/ftc/teamcode/HardwareBot1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_2/org/firstinspires/ftc/teamcode/HardwareBot1.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_2/org/firstinspires/ftc/teamcode/HardwareBot1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_2/org/firstinspires/ftc/teamcode/MecTeleRunning.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_2/org/firstinspires/ftc/teamcode/MecTeleRunning.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_2/org/firstinspires/ftc/teamcode/TestVuforia2.class" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_2/org/firstinspires/ftc/teamcode/TestVuforia2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/outputs/apk/TeamCode-debug-unaligned.apk" afterPath="$PROJECT_DIR$/TeamCode/build/outputs/apk/TeamCode-debug-unaligned.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/outputs/apk/TeamCode-debug.apk" afterPath="$PROJECT_DIR$/TeamCode/build/outputs/apk/TeamCode-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/FtcRobotController.iml" afterPath="$PROJECT_DIR$/FtcRobotController/FtcRobotController.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/TeamCode.iml" afterPath="$PROJECT_DIR$/TeamCode/TeamCode.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/instant-run-support/debug/restart-changes.txt" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/instant-run-support/debug/restart-changes.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/restart-dex/debug/build-info.xml" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/restart-dex/debug/build-info.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_2/buildId.txt" afterPath="$PROJECT_DIR$/TeamCode/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_2/buildId.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutoWithBot.java" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutoWithBot.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/HardwareBot1.java" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/HardwareBot1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/straferedauto.java" afterPath="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/straferedauto.java" />
     </list>
     <ignored path="ftc_app-masters.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,18 +110,8 @@
       <file leaf-file-name="AutoWithBot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutoWithBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="227" column="37" selection-start-line="227" selection-start-column="37" selection-end-line="227" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AutoNew.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutoNew.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="104" column="32" selection-start-line="104" selection-start-column="32" selection-end-line="104" selection-end-column="32" />
+            <state vertical-scroll-proportion="-3.9629629">
+              <caret line="234" column="118" selection-start-line="234" selection-start-column="114" selection-end-line="234" selection-end-column="118" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -64,43 +119,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SquareAuto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SquareAuto.java">
+      <file leaf-file-name="AutoWithBlue.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutoWithBlue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CapBall.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/CapBall.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CapBall2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/CapBall2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MecTeleRunning.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MecTeleRunning.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="70" column="85" selection-start-line="70" selection-start-column="85" selection-end-line="70" selection-end-column="85" />
+            <state vertical-scroll-proportion="0.78201634">
+              <caret line="283" column="32" selection-start-line="283" selection-start-column="32" selection-end-line="283" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -116,24 +139,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HardwareBot1.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HardwareBot1.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/HardwareBot1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.8807106">
-              <caret line="113" column="65" selection-start-line="113" selection-start-column="65" selection-end-line="113" selection-end-column="65" />
+            <state vertical-scroll-proportion="-6.740741">
+              <caret line="172" column="77" selection-start-line="172" selection-start-column="77" selection-end-line="172" selection-end-column="77" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#5321#5322#0" expanded="true" />
+                <element signature="e#5381#5382#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdafruitIMU.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AdafruitIMU.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="354" column="27" selection-start-line="354" selection-start-column="27" selection-end-line="354" selection-end-column="27" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -143,7 +158,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="121" column="18" selection-start-line="121" selection-start-column="18" selection-end-line="121" selection-end-column="18" />
-              <folding />
+              <folding>
+                <element signature="e#0#8490#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#6329#6330#0" expanded="false" />
+                <element signature="e#6417#6418#0" expanded="false" />
+                <element signature="e#6537#6538#0" expanded="false" />
+                <element signature="e#6625#6626#0" expanded="false" />
+                <element signature="e#7464#7465#0" expanded="false" />
+                <element signature="e#7533#7534#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2752,14 +2776,14 @@
     <option name="list">
       <list>
         <Entry>
-          <option name="url" value="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console_1.groovy" />
-          <option name="moduleName" value="FtcRobotController" />
-          <option name="title" value="FtcRobotController (Bundled Groovy 2.3.9)" />
-        </Entry>
-        <Entry>
           <option name="url" value="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console.groovy" />
           <option name="moduleName" value="TeamCode" />
           <option name="title" value="TeamCode (Bundled Groovy 2.3.9)" />
+        </Entry>
+        <Entry>
+          <option name="url" value="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console_1.groovy" />
+          <option name="moduleName" value="FtcRobotController" />
+          <option name="title" value="FtcRobotController (Bundled Groovy 2.3.9)" />
         </Entry>
       </list>
     </option>
@@ -2803,9 +2827,11 @@
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/CapBall.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/CapBall2.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MecTeleRunning.java" />
-        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutoWithBot.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutoNew.java" />
+        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/straferedauto.java" />
         <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/HardwareBot1.java" />
+        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutoWithBot.java" />
+        <option value="$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutoWithBlue.java" />
       </list>
     </option>
   </component>
@@ -2840,8 +2866,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2880,8 +2904,10 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3194,16 +3220,17 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32750398" sideWeight="0.46060607" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290938" sideWeight="0.3659091" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290938" sideWeight="0.44848484" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290938" sideWeight="0.3590909" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290938" sideWeight="0.6" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24093656" sideWeight="0.5212766" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290938" sideWeight="0.6340909" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3290938" sideWeight="0.6409091" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24090908" sideWeight="0.5200946" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290938" sideWeight="0.46969697" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290938" sideWeight="0.46363637" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290938" sideWeight="0.47878787" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -3213,7 +3240,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290938" sideWeight="0.45151514" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -3241,20 +3267,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/HardwarePushbot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.94162434">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/RobotCore-release-sources.jar!/com/qualcomm/robotcore/hardware/HardwareDevice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7983651">
-          <caret line="73" column="40" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/libs/Hardware-release-sources.jar!/com/qualcomm/hardware/adafruit/BNO055IMU.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.962963">
@@ -3329,13 +3341,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/libs/RobotCore-release-sources.jar!/com/qualcomm/robotcore/eventloop/opmode/LinearOpMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="150" column="20" selection-start-line="150" selection-start-column="20" selection-end-line="150" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -3539,53 +3544,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/boo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/CapBall2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SquareAuto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MecTeleRunning.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="70" column="85" selection-start-line="70" selection-start-column="85" selection-end-line="70" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutoWithBot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="227" column="37" selection-start-line="227" selection-start-column="37" selection-end-line="227" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutoNew.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="104" column="32" selection-start-line="104" selection-start-column="32" selection-end-line="104" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3601,17 +3564,98 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="121" column="18" selection-start-line="121" selection-start-column="18" selection-end-line="121" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#8490#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#6329#6330#0" expanded="false" />
+            <element signature="e#6417#6418#0" expanded="false" />
+            <element signature="e#6537#6538#0" expanded="false" />
+            <element signature="e#6625#6626#0" expanded="false" />
+            <element signature="e#7464#7465#0" expanded="false" />
+            <element signature="e#7533#7534#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/RobotCore-release-sources.jar!/com/qualcomm/robotcore/eventloop/opmode/LinearOpMode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.5185184">
+          <caret line="27" column="42" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/SquareAuto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutoNew.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="88" column="36" selection-start-line="88" selection-start-column="36" selection-end-line="88" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/straferedauto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="190" column="48" selection-start-line="190" selection-start-column="48" selection-end-line="190" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/MecTeleRunning.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="86" column="85" selection-start-line="86" selection-start-column="85" selection-end-line="86" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/boo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/HardwareBot1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8807106">
-          <caret line="113" column="65" selection-start-line="113" selection-start-column="65" selection-end-line="113" selection-end-column="65" />
+        <state vertical-scroll-proportion="-6.740741">
+          <caret line="172" column="77" selection-start-line="172" selection-start-column="77" selection-end-line="172" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5321#5322#0" expanded="true" />
+            <element signature="e#5381#5382#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutoWithBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9629629">
+          <caret line="234" column="118" selection-start-line="234" selection-start-column="114" selection-end-line="234" selection-end-column="118" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/AutoWithBlue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.78201634">
+          <caret line="283" column="32" selection-start-line="283" selection-start-column="32" selection-end-line="283" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>

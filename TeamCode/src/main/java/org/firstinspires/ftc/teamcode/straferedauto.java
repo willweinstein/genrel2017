@@ -33,8 +33,8 @@ import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackables;
 /**
  * Created by student on 9/22/16.
  */
-@Autonomous(name = "straferedauto3", group="Autonomous")
-public class strafered extends LinearOpMode {
+@Autonomous(name = "straferedauto5", group="Autonomous")
+public class straferedauto extends LinearOpMode {
     enum phase {
         DRIVING, ZALIGN, TURNING, ALIGNING, GOTOBUTTON, PUSHING, SECONDBEACON, XALIGN, DRIVINGALIGN, END, FIRSTALIGN, SECONDALIGNING, STRAFETOBEACON, REALIGNING, BEACONALIGN, LEFTSIDEPUSHING
     }
@@ -143,7 +143,7 @@ public class strafered extends LinearOpMode {
                     found = false;
                 }
             }
-            telemetry.addData("tar", tar.get(0));
+            telemetry.addData("tar", tar.get(1)); //fixed
             telemetry.addData("phase", ""+curPhase.name());
             if(!found) {
                 telemetry.addData("beacon image", "not found");
@@ -185,10 +185,10 @@ public class strafered extends LinearOpMode {
                 case XALIGN:
                     if(!found) {
                         bot.moveSide(HardwareBot1.direction.RIGHT, power/1.6);
-                    } else if(tar.get(0) > 1.5) {
+                    } else if(tar.get(1) > -5) { //fixed
                         startTime = clock.milliseconds();
                         bot.moveSide(HardwareBot1.direction.LEFT, power/2.3);
-                    }  else if(tar.get(0) < -1.5) {
+                    }  else if(tar.get(1) < -7) { //fixed
                         startTime = clock.milliseconds();
                         bot.moveSide(HardwareBot1.direction.RIGHT, power/2.3);
                     } else {
@@ -198,6 +198,7 @@ public class strafered extends LinearOpMode {
                     break;
                 case DRIVINGALIGN:
                     gyroCorrect(phase.STRAFETOBEACON);// }
+                    startTime = clock.milliseconds();
                     break;
                 case STRAFETOBEACON:
                     if(!found) {
