@@ -170,7 +170,7 @@ public class HardwareBot1
         double[] setPowers = new double[4];
         switch (dir) {
             case RIGHT:
-                setPowers = new double[] {power * 1.2, -power, -power, power * 1.2};
+                setPowers = new double[] {power , -power, -power, power};
                 break;
             case LEFT:
                 setPowers = new double[] {-power, power, power, -power};

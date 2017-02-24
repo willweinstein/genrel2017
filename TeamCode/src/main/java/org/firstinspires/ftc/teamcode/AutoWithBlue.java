@@ -36,7 +36,6 @@ public class AutoWithBlue extends LinearOpMode {
         String target;
         float deg;
         float dist;
-        int pushCount = 0;
         HardwareMap awh = hardwareMap;
         bot.init(awh, telemetry);
         sensorRGB = hardwareMap.colorSensor.get("buttonSensor");
@@ -214,7 +213,7 @@ public class AutoWithBlue extends LinearOpMode {
                 case PUSHING1:
                     telemetry.addData("phase", "pushing1");
 
-                    if(found && dist > 17) {
+                    if(found && dist > 14) {
                         bot.moveForward(power /2, 90);
                     } else {
                         bot.stop();
