@@ -5,6 +5,7 @@ import android.graphics.Color;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.ColorSensor;
+import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -25,21 +26,26 @@ import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackables;
 @Autonomous(name = "BlueAuto", group="Vuforia")
 public class AutoWithBlue extends LinearOpMode {
     enum phase {
-        DRIVING, TURNING, ALIGNING, FIXALIGN, PUSHING1, PUSHING2, PUSHING3, REALIGNING, END
+        DRIVING, TURNING, ALIGNING, FIXALIGN, PUSHING1, PUSHING2, PUSHING3, REALIGNING, END, SALIGN
     }
     HardwareBot1 bot = new HardwareBot1();
     ColorSensor sensorRGB;
     ElapsedTime clock = new ElapsedTime();
-    Servo pusher;
+    Servo pusherL;
+    Servo pusherR;
+    DcMotor shooter;
     @Override
     public void runOpMode() throws InterruptedException {
+        double timeAc = 0;
         String target;
         float deg;
         float dist;
         HardwareMap awh = hardwareMap;
         bot.init(awh, telemetry);
         sensorRGB = hardwareMap.colorSensor.get("buttonSensor");
-        pusher = hardwareMap.servo.get("pusher");
+        pusherL = hardwareMap.servo.get("leftPusher");
+        pusherR = hardwareMap.servo.get("rightPusher");
+        shooter = hardwareMap.dcMotor.get("shooter");
         VuforiaLocalizer.Parameters params = new VuforiaLocalizer.Parameters(R.id.cameraMonitorViewId);
         params.cameraDirection = VuforiaLocalizer.CameraDirection.BACK;
         params.vuforiaLicenseKey = "AQCPMDz/////AAAAGc0kTf6MsEGliq5btBScuZ1PxNDf9hmIoT9QS7RpEP0NNm1rMJ4/sfbvHtjqYRdwOAUBKv6sWLLtNYIVswhcwhF6oBQ2FuYMFHfD48+NNaVy2WFxmnCwvzb4yE2rEkFBe/lfkL2xT19SOOJzVOw9tpGdUjkyUlEbpzkoFQyhN4T7QE1UfYBp3/u2Qdq7JC96D63wmHtORDk6sSwtpPj6V8XZ2YRZJMg1KoSsNvzcFZ618iLzIqdrkOX193TU1G/qvHbqhzy6+M2YlYonEiJXxbOGHHRKxNj+znqKK88GxQ31PYdn2qCGXb1R0FCSpigIvT5debYFpzweYOV336Bv/Q3AbZyWWv5DbX6TSMBtHQET";
@@ -53,13 +59,14 @@ public class AutoWithBlue extends LinearOpMode {
         beacons.get(2).setName("Legos");
         beacons.get(3).setName("Gears");
 
-        pusher.setPosition(0.5);
+        pusherL.setPosition(1);
+        pusherR.setPosition(0);
 
         beacons.activate();
         telemetry.addData("READY!", "HIT PLAY!");
         telemetry.update();
         waitForStart();
-        
+
 
 
         target = "Wheels";
@@ -82,19 +89,27 @@ public class AutoWithBlue extends LinearOpMode {
         boolean timeSaved = false;
         double timeS = 0;
         compazReading = bot.getCompass();
-        while(clock.milliseconds() - starTime < 500) {
+        while(clock.milliseconds() - starTime < 900) {
             bot.moveForward(power);
         }
-        while(compazReading + 50 > 1) {
+
+        while(compazReading + 72 > 1) {
             compazReading = bot.getCompass();
-            bot.turn(HardwareBot1.direction.LEFT, power/3); //fixed
+            bot.turn(HardwareBot1.direction.LEFT, power/4); //fixed
             telemetry.addData("Compass Reading", compazReading);
             telemetry.update();
             idle();
         }
-        bot.stop();
+        double endTurn = clock.milliseconds();
+        while(clock.milliseconds() - endTurn < 100) {
+            bot.stop();
+        }
+        while(clock.milliseconds() - endTurn < 2200) {
+            shooter.setPower(1);
+        }
+        shooter.setPower(0);
         String argh = "";
-        while (opModeIsActive())  {
+        while (opModeIsActive()) {
             compazReading = bot.getCompass();
             //telemetry.addData("compass", compazReading);
             for (VuforiaTrackable beacon : beacons) {
@@ -127,7 +142,7 @@ public class AutoWithBlue extends LinearOpMode {
                             found = true;
                             telemetry.addData("I see", "gears");
                         } else {
-                           // telemetry.addData("I see", "no gears");
+                            // telemetry.addData("I see", "no gears");
                         }
                     } else {
                         //telemetry.addData("not a gear!", beacon.getName());
@@ -161,29 +176,29 @@ public class AutoWithBlue extends LinearOpMode {
                     telemetry.addData("start target compass", targ);
                     telemetry.addData("cur compass", compazReading);
                     telemetry.addData("curTarget", alignDeg);
-                    if(compazReading + 84 > 1) {
+                    if(compazReading + 82 > 1) {
                         bot.turn(HardwareBot1.direction.LEFT, power/3); //fixed
                     } else {
                         bot.stop();
                         curPhase = phase.ALIGNING;
 
                     }
-                    /*bot.rightFront.setPower(0);
-                    bot.rightBack.setPower(0);
-                    bot.leftFront.setPower(0);
-                    bot.leftBack.setPower(0);*/
+	/*bot.rightFront.setPower(0);
+	 bot.rightBack.setPower(0);
+	 bot.leftFront.setPower(0);
+	 bot.leftBack.setPower(0);*/
 
                     break;
                 case ALIGNING:
                     telemetry.addData("0", tar.get(0));
                     telemetry.addData("1", tar.get(1));
                     telemetry.addData("2", tar.get(2));
-                    if(tar.get(1) > 2.5) {
+                    if(tar.get(1) > -1) {
                         telemetry.addData("aligning", "right");
-                        bot.moveSide(HardwareBot1.direction.RIGHT, power / 2); //fixed
-                    } else if(tar.get(1) < -2.5) {
-                        telemetry.addData("aligning", "left");
                         bot.moveSide(HardwareBot1.direction.LEFT, power / 2); //fixed
+                    } else if(tar.get(1) < -1.7) {
+                        telemetry.addData("aligning", "left");
+                        bot.moveSide(HardwareBot1.direction.RIGHT, power / 2); //fixed
                     } else {
                         telemetry.addData("aligning", "aligned");
                         curPhase = phase.FIXALIGN;
@@ -198,27 +213,51 @@ public class AutoWithBlue extends LinearOpMode {
                     telemetry.addData("cur compass", compazReading);
                     telemetry.addData("curTarget", alignDeg);
                     if(compazReading + 87 > 1) {
-                        bot.turn(HardwareBot1.direction.LEFT, power/3); //fixed
+                        bot.turn(HardwareBot1.direction.RIGHT, power/3); //fixed
                     } else {
                         bot.stop();
                         curPhase = phase.PUSHING1;
 
                     }
-                    /*bot.rightFront.setPower(0);
-                    bot.rightBack.setPower(0);
-                    bot.leftFront.setPower(0);
-                    bot.leftBack.setPower(0);*/
+	/*bot.rightFront.setPower(0);
+	 bot.rightBack.setPower(0);
+	 bot.leftFront.setPower(0);
+	 bot.leftBack.setPower(0);*/
+
+                    break;
+                case SALIGN:
+                    if(clock.milliseconds() - timeAc < 200) {
+                        bot.stop();
+                        break;
+                    }
+                    telemetry.addData("fixing", "true");
+                    telemetry.addData("start Compass", com);
+                    telemetry.addData("start target compass", targ);
+                    telemetry.addData("cur compass", compazReading);
+                    telemetry.addData("curTarget", alignDeg);
+                    if(compazReading + 87 > 1) {
+                        bot.turn(HardwareBot1.direction.LEFT, power/3); //fixed
+                    } else if(compazReading + 87 < -10) {
+                        bot.turn(HardwareBot1.direction.RIGHT, power/3);
+                    } else {
+                        curPhase = phase.ALIGNING;
+                        bot.stop();
+                    }
+	/*bot.rightFront.setPower(0);
+	 bot.rightBack.setPower(0);
+	 bot.leftFront.setPower(0);
+	 bot.leftBack.setPower(0);*/
 
                     break;
                 case PUSHING1:
                     telemetry.addData("phase", "pushing1");
 
-                    if(found && dist > 14) {
-                        bot.moveForward(power /2, 90);
+                    if(found && dist > 12) {
+                        bot.moveForward(power /2, -90);
                     } else {
                         bot.stop();
                         if(!slept) {
-                            Thread.sleep(2000);
+                            Thread.sleep(400);
                             slept = true;
                         }
 
@@ -231,16 +270,18 @@ public class AutoWithBlue extends LinearOpMode {
                                     col = "blue " + String.valueOf(hsvValues[0]);
                                     read = true;
                                     bColor = "blue";
-                                    pusher.setPosition(0);
+                                    pusherL.setPosition(0);
+                                    pusherR.setPosition(0);
                                 } else {
                                     col = "red " + String.valueOf(hsvValues[0]);
                                     read = true;
                                     bColor = "red";
-                                    pusher.setPosition(1);
+                                    pusherL.setPosition(1);
+                                    pusherR.setPosition(1);
                                 }
                             }
                             telemetry.addData("color", col);
-                        } else if (pusher.getPosition() == 1 || pusher.getPosition() == 0) {
+                        } else if (pusherL.getPosition() == 1 || pusherL.getPosition() == 0) {
                             curPhase = phase.PUSHING2;
                         }
                     }
@@ -266,13 +307,14 @@ public class AutoWithBlue extends LinearOpMode {
                     break;
                 case PUSHING3:
                     telemetry.addData("phase", "pushing3");
-                    if(clock.seconds() - timeS > 1) {
+                    if(clock.seconds() - timeS > 1.2) {
                         bot.stop();
                         found = false;
                         target = "Legos";
 
                         curPhase = phase.REALIGNING;
-                        pusher.setPosition(0.5);
+                        pusherL.setPosition(1);
+                        pusherR.setPosition(0);
                         read = false;
                         slept = false;
                         timeSaved = false;
@@ -284,10 +326,12 @@ public class AutoWithBlue extends LinearOpMode {
                     telemetry.addData("Phase", "Realigning");
                     if(!found) {
                         telemetry.addData("move?", "yes");
-                        bot.moveSide(HardwareBot1.direction.LEFT, power); //fixed
+                        bot.moveSide(HardwareBot1.direction.RIGHT, -0.45 * 3, -90); //fixed
                     } else if(beaconNum == 1) {
                         telemetry.addData("move?", "align pls");
-                        curPhase = phase.ALIGNING;
+                        curPhase = phase.SALIGN;
+                        timeAc = clock.milliseconds();
+                        timeSaved = false;
                         beaconNum = 2;
                     } else {
                         telemetry.addData("move?", "end me");

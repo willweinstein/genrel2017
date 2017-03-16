@@ -38,7 +38,8 @@ public class AutoWithBot extends LinearOpMode {
     HardwareBot1 bot = new HardwareBot1();
     ColorSensor sensorRGB;
     ElapsedTime clock = new ElapsedTime();
-    Servo pusher;
+    Servo pusherL;
+    Servo pusherR;
     @Override
     public void runOpMode() throws InterruptedException {
         String target;
@@ -48,7 +49,8 @@ public class AutoWithBot extends LinearOpMode {
         HardwareMap awh = hardwareMap;
         bot.init(awh, telemetry);
         sensorRGB = hardwareMap.colorSensor.get("buttonSensor");
-        pusher = hardwareMap.servo.get("pusher");
+        pusherL = hardwareMap.servo.get("leftPusher");
+        pusherR = hardwareMap.servo.get("rightPusher");
         VuforiaLocalizer.Parameters params = new VuforiaLocalizer.Parameters(R.id.cameraMonitorViewId);
         params.cameraDirection = VuforiaLocalizer.CameraDirection.BACK;
         params.vuforiaLicenseKey = "AQCPMDz/////AAAAGc0kTf6MsEGliq5btBScuZ1PxNDf9hmIoT9QS7RpEP0NNm1rMJ4/sfbvHtjqYRdwOAUBKv6sWLLtNYIVswhcwhF6oBQ2FuYMFHfD48+NNaVy2WFxmnCwvzb4yE2rEkFBe/lfkL2xT19SOOJzVOw9tpGdUjkyUlEbpzkoFQyhN4T7QE1UfYBp3/u2Qdq7JC96D63wmHtORDk6sSwtpPj6V8XZ2YRZJMg1KoSsNvzcFZ618iLzIqdrkOX193TU1G/qvHbqhzy6+M2YlYonEiJXxbOGHHRKxNj+znqKK88GxQ31PYdn2qCGXb1R0FCSpigIvT5debYFpzweYOV336Bv/Q3AbZyWWv5DbX6TSMBtHQET";
@@ -62,13 +64,14 @@ public class AutoWithBot extends LinearOpMode {
         beacons.get(2).setName("Legos");
         beacons.get(3).setName("Gears");
 
-        pusher.setPosition(0.5);
+        pusherR.setPosition(0);
+        pusherL.setPosition(1);
 
         beacons.activate();
         telemetry.addData("READY!", "HIT PLAY!");
         telemetry.update();
         waitForStart();
-        
+
 
 
         target = "Gears";
@@ -94,12 +97,19 @@ public class AutoWithBot extends LinearOpMode {
         while(clock.milliseconds() - starTime < 400) {
             bot.moveForward(power);
         }
-        while(clock.milliseconds() - starTime < 1400) {
+        while(clock.milliseconds() - starTime < 600) {
             bot.stop();
         }
         while(compazReading - 44 < -1) {
             compazReading = bot.getCompass();
-            bot.turn(HardwareBot1.direction.RIGHT, power/4); //fixed
+            bot.turn(HardwareBot1.direction.RIGHT, power/3); //fixed
+            telemetry.addData("Compass Reading", compazReading);
+            telemetry.update();
+            idle();
+        }
+        while(compazReading - 44 < -1) {
+            compazReading = bot.getCompass();
+            bot.turn(HardwareBot1.direction.RIGHT, power/6); //fixed
             telemetry.addData("Compass Reading", compazReading);
             telemetry.update();
             idle();
@@ -192,10 +202,10 @@ public class AutoWithBot extends LinearOpMode {
                     telemetry.addData("2", tar.get(2));
                     if(tar.get(1) > -0.18) {
                         telemetry.addData("aligning", "right");
-                        bot.moveSide(HardwareBot1.direction.RIGHT, power /2); //fixed
+                        bot.moveSide(HardwareBot1.direction.LEFT, power /2); //fixed
                     } else if(tar.get(1) < -2.5) {
                         telemetry.addData("aligning", "left");
-                        bot.moveSide(HardwareBot1.direction.LEFT, power /2); //fixed
+                        bot.moveSide(HardwareBot1.direction.RIGHT, power /2); //fixed
                     } else {
                         telemetry.addData("aligning", "aligned");
                         curPhase = phase.FIXALIGN;
@@ -255,7 +265,7 @@ public class AutoWithBot extends LinearOpMode {
                     } else {
                         bot.stop();
                         if(!slept) {
-                            Thread.sleep(2000);
+                            Thread.sleep(200);
                             slept = true;
                         }
                         telemetry.addData("color", col);
@@ -269,15 +279,17 @@ public class AutoWithBot extends LinearOpMode {
                                     col = "blue " + String.valueOf(hsvValues[0]);
                                     read = true;
                                     bColor = "blue";
-                                    pusher.setPosition(1);
+                                    pusherR.setPosition(1);
+                                    pusherL.setPosition(1);
                                 } else {
                                     col = "red " + String.valueOf(hsvValues[0]);
                                     read = true;
                                     bColor = "red";
-                                    pusher.setPosition(0);
+                                    pusherR.setPosition(0);
+                                    pusherL.setPosition(0);
                                 }
                             }
-                        } else if (pusher.getPosition() == 1 || pusher.getPosition() == 0) {
+                        } else if (pusherL.getPosition() == 1 || pusherL.getPosition() == 0) {
                             curPhase = phase.PUSHING2;
                         }
                     }
@@ -308,7 +320,8 @@ public class AutoWithBot extends LinearOpMode {
                         found = false;
                         target = "Tools";
                         curPhase = phase.REALIGNING;
-                        pusher.setPosition(0.5);
+                        pusherR.setPosition(0);
+                        pusherL.setPosition(1);
                         read = false;
                         slept = false;
                         timeSaved = false;
@@ -344,7 +357,7 @@ public class AutoWithBot extends LinearOpMode {
                     */
                     if(!found) {
                         telemetry.addData("move?", "yes");
-                        bot.moveSide(HardwareBot1.direction.RIGHT, -0.35); //fixed
+                        bot.moveSide(HardwareBot1.direction.LEFT, -0.45); //fixed
                     } else if(beaconNum == 1) {
                         telemetry.addData("move?", "align pls");
                         curPhase = phase.SALIGN;

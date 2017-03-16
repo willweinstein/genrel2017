@@ -89,7 +89,7 @@ public class ColorSensorTest extends LinearOpMode {
 
 
         // get a reference to our ColorSensor object.
-        sensorRGB = hardwareMap.colorSensor.get("color");
+        sensorRGB = hardwareMap.colorSensor.get("buttonSensor");
 
         // turn the LED on in the beginning, just so user will know that the sensor is active.
 

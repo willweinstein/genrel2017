@@ -16,11 +16,12 @@ import com.qualcomm.robotcore.hardware.Servo;
 public class MecTeleRunning extends LinearOpMode {
     DcMotor shoot;
     DcMotor nom;
-    Servo pusher;
+    Servo pusherL;
+    Servo pusherR;
+    Servo opener;
     //DcMotor convey;
     HardwareBot1 bot = new HardwareBot1();
     Boolean strafe = true;
-    DcMotor stopper;
     Boolean canChangeShooting = true;
     float stopperPower = 0;
     ColorSensor csensor;
@@ -30,14 +31,19 @@ public class MecTeleRunning extends LinearOpMode {
     //   Double conveySpeed = 0.0;
     @Override
     public void runOpMode() throws InterruptedException {
+        boolean canPush = true;
+        double pushes = 0;
         csensor = hardwareMap.colorSensor.get("buttonSensor");
         telemetry.addData("Welcome", "version1");
         telemetry.update();
-        pusher = hardwareMap.servo.get("pusher");
-        shoot = hardwareMap.dcMotor.get("wheelMotor");
-        stopper = hardwareMap.dcMotor.get("stopper");
-        nom = hardwareMap.dcMotor.get("nom");
+        pusherL = hardwareMap.servo.get("leftPusher");
+        pusherR = hardwareMap.servo.get("rightPusher");
+        opener = hardwareMap.servo.get("opener");
+        shoot = hardwareMap.dcMotor.get("shooter");
+        nom = hardwareMap.dcMotor.get("pickup");
         bot.init(hardwareMap, telemetry);
+        pusherR.setPosition(0);
+        pusherL.setPosition(2);
         waitForStart();
         double shootPower = 0;
         double nomPower = .5;
@@ -53,20 +59,13 @@ public class MecTeleRunning extends LinearOpMode {
                 telemetry.addData("color", "blue");
             }
             telemetry.update();
-            stopper.setPower(stopperPower);
             nom.setPower(nomPower);
             shoot.setPower(-shootPower);
             if (gamepad1.y) {
-                if (canChangeShooting) {
-                    canChangeShooting = false;
-                    if (shootPower == 0) {
-                        shootPower = 1;
-                    } else {
-                        shootPower = 0;
-                    }
-                }
+                shootPower = -1;
+
             } else {
-                canChangeShooting = true;
+                shootPower = 0;
             }
             if (Math.abs(gamepad1.left_stick_x) > 0.15 || Math.abs(gamepad1.left_stick_y) > 0.15) {
                 if (Math.abs(gamepad1.left_stick_x) > Math.abs(gamepad1.left_stick_y)) {
@@ -93,23 +92,37 @@ public class MecTeleRunning extends LinearOpMode {
                 telemetry.addData("stopped", "stop");
             }
             if (gamepad2.left_bumper) {
-                if(pusher.getPosition() != 1) {
-                    pusher.setPosition(1);
-                } else {
-                    pusher.setPosition(0.5);
+                if(canPush) {
+                    pushes += 1;
+                    if (pusherL.getPosition() == 0) {
+                        pusherL.setPosition(1);
+                        pusherR.setPosition(0);
+                    } else if (pusherL.getPosition() == 1) {
+                        pusherL.setPosition(0);
+                        pusherR.setPosition(0);
+                    }
+                    canPush = false;
                 }
-            }
-            if (gamepad2.right_bumper) {
-                if(pusher.getPosition() != 0) {
-                    pusher.setPosition(0);
-                } else {
-                    pusher.setPosition(0.5);
+            } else if(gamepad2.right_bumper) {
+                if(canPush) {
+                    pushes += 1;
+                    if (pusherR.getPosition() == 0) {
+                        pusherL.setPosition(1);
+                        pusherR.setPosition(1);
+                    } else if (pusherR.getPosition() == 1) {
+                        pusherL.setPosition(1);
+                        pusherR.setPosition(0);
+                    }
+                    canPush = false;
                 }
+            } else {
+                canPush = true;
             }
-            if (gamepad2.left_trigger > 0) {
-                nomPower = -gamepad2.left_trigger;
-            } else if (gamepad2.right_trigger > 0) {
-                nomPower = gamepad2.right_trigger;
+            telemetry.addData("pushes", pushes);
+            if (gamepad1.left_trigger > 0) {
+                nomPower = -gamepad1.left_trigger;
+            } else if (gamepad1.right_trigger > 0) {
+                nomPower = gamepad1.right_trigger;
             } else {
                 nomPower = 0;
             }
@@ -120,7 +133,7 @@ public class MecTeleRunning extends LinearOpMode {
             } else {
                 stopperPower = 0;
             }
-
+            opener.setPosition(0.6 - gamepad2.right_trigger/2);
             /*if(gamepad2.dpad_up) {
                 if(canDPad) {
                     canDPad = false;
