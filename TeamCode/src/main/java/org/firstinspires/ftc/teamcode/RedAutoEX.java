@@ -24,7 +24,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackables;
  * Created by student on 9/22/16.
  */
 // DEFINE 9 * 6 == 42;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@Autonomous(name = "RedAutoExperimental", group="Vuforia")
+@Autonomous(name = "RedAutoExperimentalz", group="Vuforia")
 public class RedAutoEX extends LinearOpMode {
     enum phase {
         DRIVING, TURNING, ALIGNING, FIXALIGN, PUSHING1, PUSHING2, PUSHING3, REALIGNING, END, SALIGN
@@ -87,45 +87,43 @@ public class RedAutoEX extends LinearOpMode {
         String col = "";
         boolean slept = false;
         boolean read = false;
-        double starTime = clock.milliseconds();
+
         boolean timeSaved = false;
         double timeS = 0;
         compazReading = bot.getCompass();
-        while(clock.milliseconds() - starTime < 1000) {
-            bot.moveForward(power);
-        }
-        while(compazReading + 75 > 1) {
+        while(compazReading + 15 > 1) {
             compazReading = bot.getCompass();
             bot.turn(HardwareBot1.direction.LEFT, power/4); //fixed
             telemetry.addData("Compass Reading", compazReading);
             telemetry.update();
             idle();
         }
+        bot.stop();
+        double starTime = clock.milliseconds();
+        while(clock.milliseconds() - starTime < 2200) {
+            shooter.setPower(.5);
+        }
+        shooter.setPower(0);
+        while(clock.milliseconds() - starTime < 2600) {
+            bot.moveForward(power);
+        }
+
         double endTurn = clock.milliseconds();
         while(clock.milliseconds() - endTurn < 100) {
             bot.stop();
         }
-        while(clock.milliseconds() - endTurn < 2300) {
-            shooter.setPower(.8);
-        }
-        shooter.setPower(0);
-        while(clock.milliseconds() - starTime < 600) {
+
+        while(clock.milliseconds() - endTurn < 500) {
             bot.stop();
         }
-        while(compazReading - 57 < -1) {
+        while(compazReading - 40 < -1) {
             compazReading = bot.getCompass();
             bot.turn(HardwareBot1.direction.RIGHT, power/3); //fixed
             telemetry.addData("Compass Reading", compazReading);
             telemetry.update();
             idle();
         }
-        while(compazReading - 44 < -1) {
-            compazReading = bot.getCompass();
-            bot.turn(HardwareBot1.direction.RIGHT, power/6); //fixed
-            telemetry.addData("Compass Reading", compazReading);
-            telemetry.update();
-            idle();
-        }
+
         bot.stop();
         String argh = "";
         while (opModeIsActive())  {
@@ -215,10 +213,10 @@ public class RedAutoEX extends LinearOpMode {
                     telemetry.addData("2", tar.get(2));
                     if(tar.get(1) > 0) {
                         telemetry.addData("aligning", "right");
-                        bot.moveSide(HardwareBot1.direction.LEFT, power /2); //fixed
+                        bot.moveSide(HardwareBot1.direction.LEFT, power * 4 /9); //fixed
                     } else if(tar.get(1) < -1.2) {
                         telemetry.addData("aligning", "left");
-                        bot.moveSide(HardwareBot1.direction.RIGHT, power /2); //fixed
+                        bot.moveSide(HardwareBot1.direction.RIGHT, power * 4/9); //fixed
                     } else {
                         telemetry.addData("aligning", "aligned");
                         curPhase = phase.FIXALIGN;
@@ -331,7 +329,7 @@ public class RedAutoEX extends LinearOpMode {
                     break;
                 case PUSHING3:
                     telemetry.addData("phase", "pushing3");
-                    if(clock.seconds() - timeS > 1.2) {
+                    if(clock.seconds() - timeS > 1) {
                         bot.stop();
                         found = false;
                         target = "Tools";
@@ -369,7 +367,7 @@ public class RedAutoEX extends LinearOpMode {
                     */
                     if(!found) {
                         telemetry.addData("move?", "yes");
-                        bot.moveSide(HardwareBot1.direction.LEFT, -0.44 * 3, 90); //fixed
+                        bot.moveSide(HardwareBot1.direction.LEFT, -0.34 * 3, 90); //fixed
                     } else if(beaconNum == 1) {
                         telemetry.addData("move?", "align pls");
                         bot.stop();

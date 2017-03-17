@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/student/Desktop/genrelgit/genrel2017/TeamCode/build/intermediates/res/merged/debug/values-w820dp-v13/values-w820dp-v13.xml",
+        "outputFile": "/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/res/merged/debug/values-w820dp-v13/values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "/Users/student/Desktop/genrelgit/genrel2017/TeamCode/build/intermediates/exploded-aar/genrel2017/FtcRobotController/unspecified/res/values-w820dp-v13/values-w820dp-v13.xml",
+                    "file": "/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/exploded-aar/ftc_app-masters/FtcRobotController/unspecified/res/values-w820dp-v13/values-w820dp-v13.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

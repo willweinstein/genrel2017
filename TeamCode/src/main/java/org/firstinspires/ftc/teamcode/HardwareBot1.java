@@ -60,7 +60,7 @@ public class HardwareBot1
     }
 
     private double[] getTurnPowers(float target) {
-        double[] returns = null;
+        double[] returns = {0, 0, 0, 0};
         if(getCompass() - target < -1) {
             returns = new double[] {-1, -1, 1, 1};
         } else if(getCompass() - target > 1) {
@@ -177,6 +177,7 @@ public class HardwareBot1
                 break;
             default:
                 setPowers = new double[] {0, 0, 0, 0};
+                break;
         }
 
         double[] turnPowers = multArray(getTurnPowers(comp), -0.5 * power);
