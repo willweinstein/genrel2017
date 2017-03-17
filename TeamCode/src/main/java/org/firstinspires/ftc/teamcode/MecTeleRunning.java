@@ -50,6 +50,8 @@ public class MecTeleRunning extends LinearOpMode {
         double pusherPosition = 0.5;
         double speed = 0.8;
         while (opModeIsActive()) {
+            telemetry.addData("pusherL", pusherL.getPosition());
+            telemetry.addData("pusherR", pusherR.getPosition());
             float buttonSensorValues[] = {0F, 0F, 0F};
             Color.RGBToHSV((csensor.red() * 255) / 800, (csensor.green() * 255) / 800, (csensor.blue() * 255) / 800, buttonSensorValues);
             telemetry.addData("hue", buttonSensorValues[0]);
@@ -58,12 +60,11 @@ public class MecTeleRunning extends LinearOpMode {
             } else {
                 telemetry.addData("color", "blue");
             }
-            telemetry.update();
+
             nom.setPower(nomPower);
             shoot.setPower(-shootPower);
-            if (gamepad1.y) {
-                shootPower = -1;
-
+            if (gamepad2.left_trigger > 0) {
+                shootPower = -.3;
             } else {
                 shootPower = 0;
             }
@@ -83,34 +84,34 @@ public class MecTeleRunning extends LinearOpMode {
                 }
             } else if (Math.abs(gamepad1.right_stick_x) > 0.15) {
                 if (gamepad1.right_stick_x > 0) {
-                    bot.moveSide(HardwareBot1.direction.LEFT, gamepad1.right_stick_x);
+                    bot.moveSide(HardwareBot1.direction.LEFT, -gamepad1.right_stick_x);
                 } else {
-                    bot.moveSide(HardwareBot1.direction.RIGHT, -gamepad1.right_stick_x);
+                    bot.moveSide(HardwareBot1.direction.RIGHT, gamepad1.right_stick_x);
                 }
             } else {
                 bot.stop();
                 telemetry.addData("stopped", "stop");
             }
-            if (gamepad2.left_bumper) {
+            if (gamepad1.left_bumper) {
                 if(canPush) {
                     pushes += 1;
-                    if (pusherL.getPosition() == 0) {
-                        pusherL.setPosition(1);
-                        pusherR.setPosition(0);
-                    } else if (pusherL.getPosition() == 1) {
+                    if (pusherL.getPosition() == 1) {
                         pusherL.setPosition(0);
                         pusherR.setPosition(0);
+                    } else if (pusherL.getPosition() == 0) {
+                        pusherL.setPosition(1);
+                        pusherR.setPosition(1);
                     }
                     canPush = false;
                 }
-            } else if(gamepad2.right_bumper) {
+            } else if(gamepad1.right_bumper) {
                 if(canPush) {
                     pushes += 1;
                     if (pusherR.getPosition() == 0) {
                         pusherL.setPosition(1);
                         pusherR.setPosition(1);
                     } else if (pusherR.getPosition() == 1) {
-                        pusherL.setPosition(1);
+                        pusherL.setPosition(0);
                         pusherR.setPosition(0);
                     }
                     canPush = false;
@@ -134,6 +135,7 @@ public class MecTeleRunning extends LinearOpMode {
                 stopperPower = 0;
             }
             opener.setPosition(0.6 - gamepad2.right_trigger/2);
+
             /*if(gamepad2.dpad_up) {
                 if(canDPad) {
                     canDPad = false;

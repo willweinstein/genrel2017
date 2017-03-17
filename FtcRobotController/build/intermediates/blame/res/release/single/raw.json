@@ -1,7 +1,19 @@
 [
     {
+        "merged": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/res/merged/release/raw/cube_mesh_fragment_shader.glsl",
+        "source": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/res/raw/cube_mesh_fragment_shader.glsl"
+    },
+    {
+        "merged": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/res/merged/release/raw/simple_vertex_shader.glsl",
+        "source": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/res/raw/simple_vertex_shader.glsl"
+    },
+    {
         "merged": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/res/merged/release/raw/texture_vertex_shader.glsl",
         "source": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/res/raw/texture_vertex_shader.glsl"
+    },
+    {
+        "merged": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/res/merged/release/raw/chimeconnect.wav",
+        "source": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/raw/chimeconnect.wav"
     },
     {
         "merged": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/res/merged/release/raw/cube_mesh_vertex_shader.glsl",
@@ -12,12 +24,28 @@
         "source": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/res/raw/simple_vertex_shader.glsl"
     },
     {
+        "merged": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/res/merged/release/raw/nxtstartupsound.wav",
+        "source": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/raw/nxtstartupsound.wav"
+    },
+    {
+        "merged": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/res/merged/release/raw/warningmessage.wav",
+        "source": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/raw/warningmessage.wav"
+    },
+    {
+        "merged": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/res/merged/release/raw/texture_fragment_shader.glsl",
+        "source": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/res/raw/texture_fragment_shader.glsl"
+    },
+    {
         "merged": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/res/merged/release/raw/color_fragment_shader.glsl",
         "source": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/res/raw/color_fragment_shader.glsl"
     },
     {
         "merged": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/res/merged/release/raw/errormessage.wav",
         "source": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/raw/errormessage.wav"
+    },
+    {
+        "merged": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/res/merged/release/raw/color_fragment_shader.glsl",
+        "source": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/res/raw/color_fragment_shader.glsl"
     },
     {
         "merged": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/res/merged/release/raw/nxtstartupsound.wav",
@@ -32,15 +60,31 @@
         "source": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/res/raw/cube_mesh_fragment_shader.glsl"
     },
     {
+        "merged": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/res/merged/release/raw/chimedisconnect.wav",
+        "source": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/raw/chimedisconnect.wav"
+    },
+    {
         "merged": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/res/merged/release/raw/chimedisconnect.wav",
         "source": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/raw/chimedisconnect.wav"
+    },
+    {
+        "merged": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/res/merged/release/raw/cube_mesh_vertex_shader.glsl",
+        "source": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/res/raw/cube_mesh_vertex_shader.glsl"
     },
     {
         "merged": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/res/merged/release/raw/warningmessage.wav",
         "source": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/raw/warningmessage.wav"
     },
     {
+        "merged": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/res/merged/release/raw/errormessage.wav",
+        "source": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/raw/errormessage.wav"
+    },
+    {
         "merged": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/res/merged/release/raw/chimeconnect.wav",
         "source": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/raw/chimeconnect.wav"
+    },
+    {
+        "merged": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/res/merged/release/raw/texture_vertex_shader.glsl",
+        "source": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/res/raw/texture_vertex_shader.glsl"
     }
 ]

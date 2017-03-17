@@ -37,6 +37,7 @@ public class RedAutoEX extends LinearOpMode {
     DcMotor shooter;
     @Override
     public void runOpMode() throws InterruptedException {
+        String perm = "";
         String target;
         float deg;
         float dist;
@@ -90,10 +91,10 @@ public class RedAutoEX extends LinearOpMode {
         boolean timeSaved = false;
         double timeS = 0;
         compazReading = bot.getCompass();
-        while(clock.milliseconds() - starTime < 960) {
+        while(clock.milliseconds() - starTime < 1000) {
             bot.moveForward(power);
         }
-        while(compazReading + 63 > 1) {
+        while(compazReading + 75 > 1) {
             compazReading = bot.getCompass();
             bot.turn(HardwareBot1.direction.LEFT, power/4); //fixed
             telemetry.addData("Compass Reading", compazReading);
@@ -104,8 +105,8 @@ public class RedAutoEX extends LinearOpMode {
         while(clock.milliseconds() - endTurn < 100) {
             bot.stop();
         }
-        while(clock.milliseconds() - endTurn < 2200) {
-            shooter.setPower(1);
+        while(clock.milliseconds() - endTurn < 2300) {
+            shooter.setPower(.8);
         }
         shooter.setPower(0);
         while(clock.milliseconds() - starTime < 600) {
@@ -129,6 +130,7 @@ public class RedAutoEX extends LinearOpMode {
         String argh = "";
         while (opModeIsActive())  {
             compazReading = bot.getCompass();
+            telemetry.addData("perm", perm);
             telemetry.addData("compass", compazReading);
             for (VuforiaTrackable beacon : beacons) {
                 OpenGLMatrix pose = ((VuforiaTrackableDefaultListener) beacon.getListener()).getPose();
@@ -177,7 +179,7 @@ public class RedAutoEX extends LinearOpMode {
                     } else if(Math.abs(deg - compazReading) >= 10 && dist > 29) {
                         bot.turnComp(deg, power /3);
                         telemetry.addData("drive", "face");
-                    } else if(dist > 27) {
+                    } else if(dist > 23) {
                         bot.moveForward(power/2);
                         telemetry.addData("drive", "forward");
                     } else {
@@ -211,10 +213,10 @@ public class RedAutoEX extends LinearOpMode {
                     telemetry.addData("0", tar.get(0));
                     telemetry.addData("1", tar.get(1));
                     telemetry.addData("2", tar.get(2));
-                    if(tar.get(1) > -0.18) {
+                    if(tar.get(1) > 0) {
                         telemetry.addData("aligning", "right");
                         bot.moveSide(HardwareBot1.direction.LEFT, power /2); //fixed
-                    } else if(tar.get(1) < -2.5) {
+                    } else if(tar.get(1) < -1.2) {
                         telemetry.addData("aligning", "left");
                         bot.moveSide(HardwareBot1.direction.RIGHT, power /2); //fixed
                     } else {
@@ -244,7 +246,7 @@ public class RedAutoEX extends LinearOpMode {
 
                     break;
                 case SALIGN:
-                    if(clock.milliseconds() - timeAc < 200) {
+                    if(clock.milliseconds() - timeAc < 600) {
                         bot.stop();
                         break;
                     }
@@ -271,7 +273,7 @@ public class RedAutoEX extends LinearOpMode {
                 case PUSHING1:
                     telemetry.addData("phase", "pushing1");
 
-                    if(found && dist > 14) {
+                    if(found && dist > 10) {
                         bot.moveForward(power /2, 90);
                     } else {
                         bot.stop();
@@ -286,13 +288,16 @@ public class RedAutoEX extends LinearOpMode {
                         telemetry.addData("color", hsvValues[0]);
                         if (!read) {
                             if (hsvValues[0] != 0) {
-                                if (hsvValues[0] > 140 && hsvValues[0] < 310) {
+                                if (hsvValues[0] > 140 && hsvValues[0] < 330) {
+
+                                    perm = "blue";
                                     col = "blue " + String.valueOf(hsvValues[0]);
                                     read = true;
                                     bColor = "blue";
                                     pusherR.setPosition(1);
                                     pusherL.setPosition(1);
                                 } else {
+                                    perm = "red";
                                     col = "red " + String.valueOf(hsvValues[0]);
                                     read = true;
                                     bColor = "red";
@@ -300,7 +305,7 @@ public class RedAutoEX extends LinearOpMode {
                                     pusherL.setPosition(0);
                                 }
                             }
-                        } else if (pusherL.getPosition() == 1 || pusherL.getPosition() == 0) {
+                        } else if ((pusherL.getPosition() == 1 || pusherL.getPosition() == 0) && pusherL.getPosition() == pusherR.getPosition()) {
                             curPhase = phase.PUSHING2;
                         }
                     }
@@ -317,7 +322,7 @@ public class RedAutoEX extends LinearOpMode {
                     }
                     telemetry.addData("phase", "pushing2");
                     telemetry.addData("color", col);
-                    if(found && dist > 1) {
+                    if(found) {
                         bot.moveForward(power / 4);
                     } else {
                         curPhase = phase.PUSHING3;
@@ -346,11 +351,7 @@ public class RedAutoEX extends LinearOpMode {
                         timeS = clock.seconds();
                         timeSaved = true;
                     }
-                    if(clock.seconds() - starTime > 31) {
-                        curPhase = phase.END;
-                        bot.stop();
-                        break;
-                    }
+
                     /*
                     if(clock.seconds() - timeS < 2) {
                         bot.moveSide(HardwareBot1.direction.RIGHT, power * 3/2);
@@ -368,9 +369,10 @@ public class RedAutoEX extends LinearOpMode {
                     */
                     if(!found) {
                         telemetry.addData("move?", "yes");
-                        bot.moveSide(HardwareBot1.direction.LEFT, -0.5); //fixed
+                        bot.moveSide(HardwareBot1.direction.LEFT, -0.44 * 3, 90); //fixed
                     } else if(beaconNum == 1) {
                         telemetry.addData("move?", "align pls");
+                        bot.stop();
                         curPhase = phase.SALIGN;
                         timeAc = clock.milliseconds();
                         timeSaved = false;

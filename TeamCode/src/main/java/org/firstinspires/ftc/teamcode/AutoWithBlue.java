@@ -80,6 +80,7 @@ public class AutoWithBlue extends LinearOpMode {
         String bColor = "";
         double alignDeg = 0;
         int beaconNum = 1;
+        double initialCompassReading = bot.getCompass();
         String com ="";
         String targ = "";
         String col = "";
@@ -89,7 +90,7 @@ public class AutoWithBlue extends LinearOpMode {
         boolean timeSaved = false;
         double timeS = 0;
         compazReading = bot.getCompass();
-        while(clock.milliseconds() - starTime < 900) {
+        while(clock.milliseconds() - starTime < 950) {
             bot.moveForward(power);
         }
 
@@ -104,12 +105,13 @@ public class AutoWithBlue extends LinearOpMode {
         while(clock.milliseconds() - endTurn < 100) {
             bot.stop();
         }
-        while(clock.milliseconds() - endTurn < 2200) {
-            shooter.setPower(1);
+        while(clock.milliseconds() - endTurn < 2500) {
+            shooter.setPower(0.8);
         }
         shooter.setPower(0);
         String argh = "";
         while (opModeIsActive()) {
+            telemetry.addData("phase", "" + curPhase.name());
             compazReading = bot.getCompass();
             //telemetry.addData("compass", compazReading);
             for (VuforiaTrackable beacon : beacons) {
@@ -176,7 +178,7 @@ public class AutoWithBlue extends LinearOpMode {
                     telemetry.addData("start target compass", targ);
                     telemetry.addData("cur compass", compazReading);
                     telemetry.addData("curTarget", alignDeg);
-                    if(compazReading + 82 > 1) {
+                    if(compazReading + 85 > initialCompassReading) {
                         bot.turn(HardwareBot1.direction.LEFT, power/3); //fixed
                     } else {
                         bot.stop();
@@ -193,7 +195,7 @@ public class AutoWithBlue extends LinearOpMode {
                     telemetry.addData("0", tar.get(0));
                     telemetry.addData("1", tar.get(1));
                     telemetry.addData("2", tar.get(2));
-                    if(tar.get(1) > -1) {
+                    if(tar.get(1) > -0.7) {
                         telemetry.addData("aligning", "right");
                         bot.moveSide(HardwareBot1.direction.LEFT, power / 2); //fixed
                     } else if(tar.get(1) < -1.7) {
@@ -252,7 +254,7 @@ public class AutoWithBlue extends LinearOpMode {
                 case PUSHING1:
                     telemetry.addData("phase", "pushing1");
 
-                    if(found && dist > 12) {
+                    if(found && dist > 10) {
                         bot.moveForward(power /2, -90);
                     } else {
                         bot.stop();
@@ -270,8 +272,10 @@ public class AutoWithBlue extends LinearOpMode {
                                     col = "blue " + String.valueOf(hsvValues[0]);
                                     read = true;
                                     bColor = "blue";
+                                  //  if (beaconNum == 1) {
                                     pusherL.setPosition(0);
                                     pusherR.setPosition(0);
+
                                 } else {
                                     col = "red " + String.valueOf(hsvValues[0]);
                                     read = true;
@@ -298,7 +302,7 @@ public class AutoWithBlue extends LinearOpMode {
                     }
                     telemetry.addData("phase", "pushing2");
                     telemetry.addData("color", col);
-                    if(found && dist > 1) {
+                    if(found) {
                         bot.moveForward(power / 4);
                     } else {
                         curPhase = phase.PUSHING3;

@@ -8,7 +8,19 @@
         "source": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/exploded-aar/Inspection-release/res/menu/main_menu.xml"
     },
     {
+        "merged": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/res/merged/release/menu/menu_server.xml",
+        "source": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/exploded-aar/Blocks-release/res/menu/menu_server.xml"
+    },
+    {
         "merged": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/res/merged/release/menu/menu_server.xml",
         "source": "/Users/student/Desktop/ftc_app-masters/FtcRobotController/build/intermediates/exploded-aar/Blocks-release/res/menu/menu_server.xml"
+    },
+    {
+        "merged": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/res/merged/release/menu/ftc_robot_controller.xml",
+        "source": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/src/main/res/menu/ftc_robot_controller.xml"
+    },
+    {
+        "merged": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/res/merged/release/menu/main_menu.xml",
+        "source": "/Users/student/Desktop/genrelgit/genrel2017/FtcRobotController/build/intermediates/exploded-aar/Inspection-release/res/menu/main_menu.xml"
     }
 ]

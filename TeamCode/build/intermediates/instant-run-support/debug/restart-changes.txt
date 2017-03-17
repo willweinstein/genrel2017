@@ -1,2 +1,0 @@
-CHANGED,/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/firstinspires/ftc/teamcode/AutoWithBot.class
-CHANGED,/Users/student/Desktop/ftc_app-masters/TeamCode/build/intermediates/transforms/instantRun/debug/folders/1/5/main/org/firstinspires/ftc/teamcode/ColorSensorTest.class
