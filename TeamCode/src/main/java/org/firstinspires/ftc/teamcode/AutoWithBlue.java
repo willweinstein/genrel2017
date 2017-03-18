@@ -9,6 +9,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
+import com.vuforia.CameraDevice;
 import com.vuforia.HINT;
 import com.vuforia.Vuforia;
 
@@ -67,6 +68,7 @@ public class AutoWithBlue extends LinearOpMode {
         beacons.activate();
         telemetry.addData("READY!", "HIT PLAY!");
         telemetry.update();
+        CameraDevice.getInstance().setFlashTorchMode(true);
         waitForStart();
 
 
@@ -92,7 +94,7 @@ public class AutoWithBlue extends LinearOpMode {
         boolean timeSaved = false;
         double timeS = 0;
         compazReading = bot.getCompass();
-        while(clock.milliseconds() - starTime < 400) {
+        while(clock.milliseconds() - starTime < 200) {
             bot.moveForward(power);
         }
 
@@ -160,12 +162,12 @@ public class AutoWithBlue extends LinearOpMode {
             switch (curPhase) {
                 case DRIVING:
                     if(!found) {
-                        bot.moveForward(power/2);
-                    } else if(Math.abs(deg - compazReading) >= 10 && dist > 30) {
+                        bot.moveForward(power/3);
+                    } else if(Math.abs(deg - compazReading) >= 10 && dist > 34) {
                         bot.turnComp(deg, power/3);
                         telemetry.addData("drive", "face");
-                    } else if(dist > 30) {
-                        bot.moveForward(power/2);
+                    } else if(dist > 34) {
+                        bot.moveForward(power/3);
                         telemetry.addData("drive", "forward");
                     } else {
                         bot.stop();
@@ -181,7 +183,7 @@ public class AutoWithBlue extends LinearOpMode {
                     telemetry.addData("start target compass", targ);
                     telemetry.addData("cur compass", compazReading);
                     telemetry.addData("curTarget", alignDeg);
-                    if(compazReading + 82 > 1) {
+                    if(compazReading + 84 > 1) {
                         bot.turn(HardwareBot1.direction.LEFT, power/3); //fixed
                     } else {
                         bot.stop();
@@ -211,7 +213,7 @@ public class AutoWithBlue extends LinearOpMode {
                         telemetry.addData("aligning", "not found yet :(");
                         bot.moveSide(HardwareBot1.direction.RIGHT, power / 2);
                     }
-                    if(tar.get(1) > 0) {
+                    if(tar.get(1) > -0.5) {
                         telemetry.addData("aligning", "right");
                         bot.moveSide(HardwareBot1.direction.LEFT, power / 2); //fixed
                     } else if(tar.get(1) < -1.5) {
@@ -271,7 +273,7 @@ public class AutoWithBlue extends LinearOpMode {
                 case PUSHING1:
                     telemetry.addData("phase", "pushing1");
 
-                    if(found && dist > 12) {
+                    if(found && dist > 10) {
                         bot.moveForward(power /2, -90);
                     } else {
                         bot.stop();

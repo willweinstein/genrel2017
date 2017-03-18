@@ -9,6 +9,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
+import com.vuforia.CameraDevice;
 import com.vuforia.HINT;
 import com.vuforia.Vuforia;
 
@@ -67,6 +68,7 @@ public class RedAutoEX extends LinearOpMode {
         beacons.activate();
         telemetry.addData("READY!", "HIT PLAY!");
         telemetry.update();
+        CameraDevice.getInstance().setFlashTorchMode(true);
         waitForStart();
         
 
@@ -91,32 +93,22 @@ public class RedAutoEX extends LinearOpMode {
         boolean timeSaved = false;
         double timeS = 0;
         compazReading = bot.getCompass();
-        while(compazReading + 15 > 1) {
-            compazReading = bot.getCompass();
-            bot.turn(HardwareBot1.direction.LEFT, power/4); //fixed
-            telemetry.addData("Compass Reading", compazReading);
-            telemetry.update();
-            idle();
-        }
-        bot.stop();
         double starTime = clock.milliseconds();
-        while(clock.milliseconds() - starTime < 2200) {
-            shooter.setPower(.5);
-        }
-        shooter.setPower(0);
-        while(clock.milliseconds() - starTime < 2600) {
+
+        while(clock.milliseconds() - starTime < 100) {
             bot.moveForward(power);
         }
-
+        bot.stop();
+        while(clock.milliseconds() - starTime < 3100) {
+            shooter.setPower(.4);
+        }
+        shooter.setPower(0);
         double endTurn = clock.milliseconds();
-        while(clock.milliseconds() - endTurn < 100) {
-            bot.stop();
+        while(clock.milliseconds() - endTurn < 400) {
+            bot.moveForward(power);
         }
-
-        while(clock.milliseconds() - endTurn < 500) {
-            bot.stop();
-        }
-        while(compazReading - 40 < -1) {
+        bot.stop();
+        while(compazReading - 43 < -1) {
             compazReading = bot.getCompass();
             bot.turn(HardwareBot1.direction.RIGHT, power/3); //fixed
             telemetry.addData("Compass Reading", compazReading);
@@ -134,6 +126,7 @@ public class RedAutoEX extends LinearOpMode {
                 OpenGLMatrix pose = ((VuforiaTrackableDefaultListener) beacon.getListener()).getPose();
                 //((VuforiaTrackableDefaultListener) beacon.getListener())
                 if(pose != null) {
+
                     VectorF translation = pose.getTranslation();
                     translation = toInches(translation);
                     telemetry.addData(beacon.getName(), translation);
@@ -169,16 +162,25 @@ public class RedAutoEX extends LinearOpMode {
                     found = false;
                 }
             }
+            if(perm != "red" && perm != "blue") {
+                if(found) {
+                    perm = "found";
+                } else {
+                    perm = "not found";
+                }
+            }
 
             switch (curPhase) {
                 case DRIVING:
+                    telemetry.addData("phase", "driving");
                     if(!found) {
-                        bot.moveForward(power/2);
+                        bot.moveForward(power/3
+                        );
                     } else if(Math.abs(deg - compazReading) >= 10 && dist > 29) {
                         bot.turnComp(deg, power /3);
                         telemetry.addData("drive", "face");
-                    } else if(dist > 23) {
-                        bot.moveForward(power/2);
+                    } else if(dist > 29) {
+                        bot.moveForward(power/3);
                         telemetry.addData("drive", "forward");
                     } else {
                         bot.stop();
@@ -194,7 +196,7 @@ public class RedAutoEX extends LinearOpMode {
                     telemetry.addData("start target compass", targ);
                     telemetry.addData("cur compass", compazReading);
                     telemetry.addData("curTarget", alignDeg);
-                    if(compazReading - 80 < -1) {
+                    if(compazReading - 84 < -1) {
                         bot.turn(HardwareBot1.direction.RIGHT, power/3); //fixed
                     } else {
                         bot.stop();
@@ -211,10 +213,10 @@ public class RedAutoEX extends LinearOpMode {
                     telemetry.addData("0", tar.get(0));
                     telemetry.addData("1", tar.get(1));
                     telemetry.addData("2", tar.get(2));
-                    if(tar.get(1) > 0) {
+                    if(tar.get(1) > 0.6) {
                         telemetry.addData("aligning", "right");
                         bot.moveSide(HardwareBot1.direction.LEFT, power * 4 /9); //fixed
-                    } else if(tar.get(1) < -1.2) {
+                    } else if(tar.get(1) < -0.8) {
                         telemetry.addData("aligning", "left");
                         bot.moveSide(HardwareBot1.direction.RIGHT, power * 4/9); //fixed
                     } else {
@@ -271,7 +273,7 @@ public class RedAutoEX extends LinearOpMode {
                 case PUSHING1:
                     telemetry.addData("phase", "pushing1");
 
-                    if(found && dist > 10) {
+                    if(found && dist > 9) {
                         bot.moveForward(power /2, 90);
                     } else {
                         bot.stop();
@@ -365,9 +367,14 @@ public class RedAutoEX extends LinearOpMode {
                         break;
                     }
                     */
+                    if(beaconNum != 1) {
+                        telemetry.addData("move?", "end me");
+                        bot.stop();
+                        curPhase = phase.END;
+                    }
                     if(!found) {
                         telemetry.addData("move?", "yes");
-                        bot.moveSide(HardwareBot1.direction.LEFT, -0.34 * 3, 90); //fixed
+                        bot.moveSide(HardwareBot1.direction.LEFT, -0.4 * 3, 90); //fixed
                     } else if(beaconNum == 1) {
                         telemetry.addData("move?", "align pls");
                         bot.stop();
